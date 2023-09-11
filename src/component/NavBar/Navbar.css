@@ -4,3 +4,40 @@
     height: 100vh;
 
 }
+.icon-text-navbar{
+    font-family: Kaushan Script;
+    color: #D9614C;
+}
+
+
+.search {
+    display: flex;
+    justify-content:space-between;
+}
+
+.serc {
+    color: #939393;
+    margin-left: 40px;
+
+}
+.button1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9614C;
+    color: #fff;
+    width: 260px;
+    height: 44px;
+    border: #fff;
+    border-radius: 5px;
+    font-family: esteadad;
+}
+.plus{
+    width: 20px;
+    height: 20px;
+}
+
+.parent {
+    margin-right: 20px;
+    z-index: 1;
+}

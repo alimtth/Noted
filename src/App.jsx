@@ -8,9 +8,10 @@ function App() {
 
   return (
     <>
+    
     <NavBar></NavBar>
     <Note></Note>
-      <NoteList></NoteList>
+    <NoteList></NoteList>
     </>
   )
 }

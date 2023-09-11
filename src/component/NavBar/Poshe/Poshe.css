@@ -1,0 +1,45 @@
+.title2 {
+    font-family: esteadad-NA;
+    font-size: 12px;
+    color: #00000099;
+    
+}
+
+.title-poshe{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-bottom: -20px;
+}
+
+.folder-plus{
+    margin-left: 40px;
+    color: #939393;
+
+}
+
+.title-noted-all {
+    display: flex;
+    align-items: center;
+}
+
+.title-noted-folder{
+    display: flex;
+    align-items: center;
+    font-family: esteadad-NA;
+    color: #00000099;
+    font-size: 14px;
+}
+
+.title-noted-folder-all{
+    display: flex;
+    align-items: center;
+    font-family: esteadad-NA;
+    color: #000000;
+    font-size: 14px;
+    background-color: #fff;
+    width: 100%;
+    height: 40px;
+    padding: 10px, 20px, 10px;
+    z-index: 2;
+}
