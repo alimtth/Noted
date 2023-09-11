@@ -1,7 +1,7 @@
 import './Navbar.css'
 import LastNote from './lastNote/LastNote';
 import Poshe from './Poshe/Poshe';
-import More from '../More/More';
+import More from './More/More';
 import { Search } from 'react-bootstrap-icons';
 import { Plus } from 'react-bootstrap-icons';
 
