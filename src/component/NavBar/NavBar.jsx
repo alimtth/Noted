@@ -19,7 +19,6 @@ function NavBar() {
             </div>
             <div>
                 <LastNote></LastNote>
-    
             </div>
             <div>
                 <Poshe></Poshe>

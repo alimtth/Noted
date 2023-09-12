@@ -1,4 +1,3 @@
-
 import './App.css'
 import NavBar from './component/NavBar/NavBar'
 import NoteList from './component/NoteList/NoteList'
@@ -8,7 +7,6 @@ function App() {
 
   return (
     <>
-    
     <NavBar></NavBar>
     <Note></Note>
     <NoteList></NoteList>
