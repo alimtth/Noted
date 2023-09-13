@@ -17,15 +17,13 @@ function NavBar() {
             <div className='button'>
                 <button className='button1'> <Plus className='plus'/>یادداشت جدید </button>
             </div>
-            <div>
-                <LastNote></LastNote>
-            </div>
-            <div>
-                <Poshe></Poshe>
-            </div>
-            <div>
-                <More></More>
-            </div>
+            
+            <LastNote />
+            
+            <Poshe />
+            
+            <More />
+            
             </div>
         </div>
     );
