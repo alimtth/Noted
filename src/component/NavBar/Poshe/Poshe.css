@@ -1,4 +1,4 @@
-.title2 {
+/* .title2 {
     font-family: esteadad-NA;
     font-size: 12px;
     color: #00000099;
@@ -42,4 +42,42 @@
     height: 40px;
     padding: 10px, 20px, 10px;
     z-index: 2;
+} */
+
+.title-poshe header {
+    display: flex;
+    padding: 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+
 }
+.title-poshe header h2 {
+    font-size: 12px;
+    font-family: esteadad-NA;
+    font-weight: 400;
+}
+.new-folder-button {
+    border: none;
+    background: none;
+}
+
+.nav-bar-item {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    align-self: stretch;
+  
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+  }
+
+  .nav-bar-item--selected {
+    background: #FFFBFA;
+  }
+
+ 

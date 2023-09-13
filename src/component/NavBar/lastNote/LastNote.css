@@ -1,10 +1,9 @@
 
-
-
 .last-note-container h5{
     font-family: esteadad-NA;
     color: #00000099;
     font-size: 12px;
+    padding: 0px 20px;
 }
 
 .ali{
@@ -14,28 +13,3 @@
 }
 
 
-.last-notes {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    align-self: stretch;
-    font-family: esteadad-NA;
-    color: #00000099;
-    font-size: 14px;
-  }
-
-  .nav-bar-item {
-    display: flex;
-    padding: 10px 20px;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
-    align-self: stretch;
-  
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 21px;
-  }
