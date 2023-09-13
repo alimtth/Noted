@@ -1,36 +1,30 @@
 import './Card.css'
+import CardsItem from '../CardsItem';
+
+const cards = [
+    {
+        title:"خلاصه جلسه ۱۲ صدکدرز ",
+        description:"دیزاین یه ماشین حساب رو...",
+        date:"۱۸ شهریور ۱۴۰۲"
+    },
+    {
+        title:"کتاب هایی که میخواهم بخونم",
+        description:"کتابخونه نمیشه شب...",
+        date:"۱ شهریور ۱۴۰۲"
+    },
+    {
+        title:"هدف من برای سال حدید",
+        description:"اولین هدفم اینکه بتونم...",
+        date:"۲ فروردین ۱۴۰۲"
+    },
+]
 function Card() {
     return (
-        <>
-        <div className='card-note'>
-        <div >
-            <h5 className='title-card'>خلاصه جلسه ۱۲ صدکدرز</h5>
-        </div>
-          <div className='descrip'>
-            <h6 className='descrip-mtn'>دیزاین یه ماشین حساب رو...</h6>
-            <h6 className='year'>۱۸ شهریور ۱۴۰۲</h6>
-            </div>
-        </div>
-        <div className='card-note-1'>
-        <div >
-            <h5 className='title-card'>کتاب هایی که میخواهم بخونم</h5>
-        </div>
-          <div className='descrip'>
-            <h6 className='descrip-mtn'>کتابخونه نمیشه شب...</h6>
-            <h6 className='year'>۱ شهریور ۱۴۰۲</h6>
-            </div>
-        </div>
-        <div className='card-note-2'>
-        <div >
-            <h5 className='title-card'>هدف من برای سال حدید</h5>
-        </div>
-          <div className='descrip'>
-            <h6 className='descrip-mtn'>اولین هدفم اینکه بتونم...</h6>
-            <h6 className='year'>۲ فروردین ۱۴۰۲</h6>
-            </div>
-        </div>
-        
-        </>
+       <div className='card-notess'>
+        {cards.map((item, index)=> {
+            return <CardsItem key={item.title} title={item.title} description={item.description} date={item.date} isColor={index === 1} />
+        })}
+       </div>
     );
 }
 
