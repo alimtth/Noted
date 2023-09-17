@@ -1,4 +1,5 @@
 import './LastNote.css'
+
 import DocIcon from "@/assets/images/icons/doc.svg";
 import NavBarItem from '../NavBarItem/NavBarItem';
 
@@ -16,6 +17,7 @@ const lastNotes = [
 ];
 
 function LastNotes() {
+
     return (
       <section className="last-note-container">
         <h5>آخرین یادداشت‌ها</h5>

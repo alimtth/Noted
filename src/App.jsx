@@ -4,7 +4,6 @@ import NoteList from './component/NoteList/NoteList'
 import Note from './component/Note/Note'
 
 function App() {
-
   return (
     <>
     <NavBar></NavBar>
