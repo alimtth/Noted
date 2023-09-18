@@ -1,11 +1,11 @@
 
-function CardsItem(props) {
+function CardsItem({title, description, date, color}) {
     return (
-        <div className={props.isColor ? "card-note-1" : "card-note"}>
-            <h5 className='title-card'>{props.title}</h5>
+        <div className="card-note"  style={{borderColor:color}}>
+            <h5 className='title-card'>{title}</h5>
           <div className='descrip'>
-            <h6 className='descrip-mtn'>{props.description}</h6>
-            <h6 className='year'>{props.date}</h6>
+            <h6 className='descrip-mtn'>{description}</h6>
+            <h6 className='year'>{date}</h6>
             </div>
         </div>
     );
