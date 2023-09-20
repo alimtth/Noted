@@ -30,6 +30,16 @@ const Poshes = [
 
 function Poshe() {
   const [selectPoshe , setSelectPoshe] = useState(null);
+
+  // const [open, setOpen] = useState(null);
+
+  // const toggle = (index) => {
+  //   if (open === index) {
+  //     setOpen(null);
+  //   }else {
+  //     setOpen(index);
+  //   }
+  // };
     return (
         <section className='title-poshe'>
             <header>
@@ -47,6 +57,7 @@ function Poshe() {
                     selectPoshe={item.id === selectPoshe}
                     event={()=> setSelectPoshe(item.id)}
                     icon={index === 0 ? OpenFolderIcon : folderIcon}
+                    // click={()=> toggle(index)}
                     />
                 ))}
 
