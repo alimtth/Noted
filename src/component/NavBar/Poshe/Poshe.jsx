@@ -36,6 +36,10 @@ function Poshe() {
     setisShowFolder(true)
   }
 
+  const cancelHandlerBtnAddFolder = () => {
+    setisShowFolder(false)
+  }
+
 
     return (
         <section className='title-poshe'>
@@ -47,11 +51,12 @@ function Poshe() {
             </header>
 
             {isShowFolder &&(
-              <div className="folder">
-              <div>
+              <div >
+              <div className='folder'>
                 <img src={folderIcon}/>
                 <input type="text" className='input-new-folder'/>
                 <button className='btn-ok-new-folder'>OK</button>
+                <button onClick={cancelHandlerBtnAddFolder}>Cancel</button>
               </div>
             </div>
             )}

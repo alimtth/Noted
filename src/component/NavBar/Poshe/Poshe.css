@@ -84,6 +84,8 @@
     color: aqua;
 }
 
-.folder {
-    display: flex;
-}
+    .folder {
+        margin-right: 20px;
+        display: flex;
+        gap: 10px;
+    }
