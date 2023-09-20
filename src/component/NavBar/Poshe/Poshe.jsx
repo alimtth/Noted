@@ -5,7 +5,7 @@ import OpenFolderIcon from "@/assets/images/icons/open-folder.svg";
 import NavBarItem from "../NavBarItem/NavBarItem";
 import { useState } from 'react';
 
-const Poshes = [
+const initialPoshes = [
     {
         id: 1,
         name: "همه یاد‌داشت‌‌ها",
@@ -31,6 +31,9 @@ const Poshes = [
 function Poshe() {
   const [selectPoshe , setSelectPoshe] = useState(null);
   const [isShowFolder , setisShowFolder] = useState(false);
+  const [NewFolderValue, setNewFolderValue] = useState();
+  const [Folders, setFolders] = useState(initialPoshes);
+
 
   const handlerBtnAddFolder = () => {
     setisShowFolder(true)
@@ -39,6 +42,18 @@ function Poshe() {
   const cancelHandlerBtnAddFolder = () => {
     setisShowFolder(false)
   }
+
+
+    const handlchang = (event) => {
+      setNewFolderValue(event.target.value)
+    }
+
+
+    const handlchangOK = () => {
+      setFolders([{name: NewFolderValue}, ...Folders]);
+      setisShowFolder(false);
+
+    }
 
 
     return (
@@ -54,22 +69,22 @@ function Poshe() {
               <div >
               <div className='folder'>
                 <img src={folderIcon}/>
-                <input type="text" className='input-new-folder'/>
-                <button className='btn-ok-new-folder'>OK</button>
-                <button onClick={cancelHandlerBtnAddFolder}>Cancel</button>
+                <input type="text" className='input-new-folder' onChange={handlchang}/>
+                <button className='btn-ok-new-folder' onClick={handlchangOK}>OK</button>
+                <button onClick={cancelHandlerBtnAddFolder
+                }>Cancel</button>
               </div>
             </div>
             )}
 
             <div className='allfolder'>
-                {Poshes.map((item, index) => (
+                {Folders.map((item, index) => (
                     <NavBarItem 
                     key={item.id} 
                     text={item.name} 
                     selectPoshe={item.id === selectPoshe}
                     event={()=> setSelectPoshe(item.id)}
                     icon={index === 0 ? OpenFolderIcon : folderIcon}
-                    // click={()=> toggle(index)}
                     />
                 ))}
 
