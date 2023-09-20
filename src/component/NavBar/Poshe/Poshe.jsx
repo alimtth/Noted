@@ -3,26 +3,33 @@ import folderIcon from "@/assets/images/icons/folder.svg";
 import NewFolderIcon from "@/assets/images/icons/new-folder.svg";
 import OpenFolderIcon from "@/assets/images/icons/open-folder.svg";
 import NavBarItem from "../NavBarItem/NavBarItem";
+import { useState } from 'react';
 
 const Poshes = [
     {
+        id: 1,
         name: "همه یاد‌داشت‌‌ها",
       },
       {
+        id: 2,
         name: "کاری",
       },
       {
+        id: 3,
         name: "مسافرت",
       },
       {
+        id: 4,
         name: "رویدادها",
       },
       {
+        id: 5,
         name: "باشگاه",
       },
 ];
 
 function Poshe() {
+  const [selectPoshe , setSelectPoshe] = useState(null);
     return (
         <section className='title-poshe'>
             <header>
@@ -34,7 +41,13 @@ function Poshe() {
 
             <div className='allfolder'>
                 {Poshes.map((item, index) => (
-                    <NavBarItem key={item.name} text={item.name} isSelected={index === 0} icon={index === 0 ? OpenFolderIcon : folderIcon}/>
+                    <NavBarItem 
+                    key={item.id} 
+                    text={item.name} 
+                    selectPoshe={item.id === selectPoshe}
+                    event={()=> setSelectPoshe(item.id)}
+                    icon={index === 0 ? OpenFolderIcon : folderIcon}
+                    />
                 ))}
 
             </div>
@@ -44,15 +57,3 @@ function Poshe() {
 }
 
 export default Poshe;
-            // <div className='title-poshe'>
-            // <h3 className='title2'>پوشه ها</h3>
-            // <h4><FolderPlus className='folder-plus'/></h4>
-            // </div>
-            // <div className='allfolder'>
-            // <h3 className='title-noted-folder-all'><Folder2Open className='ali'/>همه یادداشت ها</h3>
-            // <h3 className='title-noted-folder'><Folder className='ali'/>کاری</h3>
-            // <h3 className='title-noted-folder'><Folder className='ali'/>مسافرت</h3>
-            // <h3 className='title-noted-folder'><Folder className='ali'/>رویدادها</h3>
-            // <h3 className='title-noted-folder'><Folder className='ali'/>باشگاه</h3>
-
-            // </div>

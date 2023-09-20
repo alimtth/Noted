@@ -1,7 +1,12 @@
 
-function CardsItem({title, description, date, color}) {
+function CardsItem({title, description, date, color, selected, event}) {
+    const styl = {
+        borderColor : color,
+        backgroundColor: selected ? "white" : "#fcf1e3",
+    }
+
     return (
-        <div className="card-note"  style={{borderColor:color}}>
+        <div className="card-note" style={styl} onClick={event}>
             <h5 className='title-card'>{title}</h5>
           <div className='descrip'>
             <h6 className='descrip-mtn'>{description}</h6>

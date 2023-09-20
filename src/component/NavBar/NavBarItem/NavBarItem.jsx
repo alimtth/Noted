@@ -1,14 +1,17 @@
-function NavBarItem(props) {
+ import { useState } from "react";
+
+function NavBarItem({ text, icon, event, selectPoshe}) {
+  const styl = {
+    backgroundColor: selectPoshe ? "white" : "#fcf1e3",
+  };
     return (
       <div
-        className={
-          props.isSelected
-            ? "nav-bar-item nav-bar-item--selected"
-            : "nav-bar-item"
-        }
+        className={"nav-bar-item"}
+        style={styl}
+        onClick={event}
       >
-        <img src={props.icon} />
-        {props.text}
+        <img src={icon} />
+        {text}
       </div>
     );
   }
