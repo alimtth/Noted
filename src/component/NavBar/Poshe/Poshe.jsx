@@ -8,7 +8,7 @@ import { useState } from 'react';
 const Poshes = [
     {
         id: 1,
-        name: "همه یاsssد‌داشت‌‌ها",
+        name: "همه یاد‌داشت‌‌ها",
       },
       {
         id: 2,
