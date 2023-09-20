@@ -30,24 +30,31 @@ const Poshes = [
 
 function Poshe() {
   const [selectPoshe , setSelectPoshe] = useState(null);
+  const [isShowFolder , setisShowFolder] = useState(false);
 
-  // const [open, setOpen] = useState(null);
+  const handlerBtnAddFolder = () => {
+    setisShowFolder(true)
+  }
 
-  // const toggle = (index) => {
-  //   if (open === index) {
-  //     setOpen(null);
-  //   }else {
-  //     setOpen(index);
-  //   }
-  // };
+
     return (
         <section className='title-poshe'>
             <header>
                 <h2>پوشه ها</h2>
                 <button className='new-folder-button'>
-                    <img src={NewFolderIcon} />
+                    <img className='NewFolderIcon' src={NewFolderIcon} onClick={handlerBtnAddFolder} />
                 </button>
             </header>
+
+            {isShowFolder &&(
+              <div className="folder">
+              <div>
+                <img src={folderIcon}/>
+                <input type="text" className='input-new-folder'/>
+                <button className='btn-ok-new-folder'>OK</button>
+              </div>
+            </div>
+            )}
 
             <div className='allfolder'>
                 {Poshes.map((item, index) => (

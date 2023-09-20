@@ -80,4 +80,10 @@
     background: #FFFBFA;
   }
 
- 
+.NewFolderIcon{
+    color: aqua;
+}
+
+.folder {
+    display: flex;
+}
