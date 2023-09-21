@@ -33,6 +33,7 @@ function Poshe() {
   const [isShowFolder , setisShowFolder] = useState(false);
   const [NewFolderValue, setNewFolderValue] = useState();
   const [Folders, setFolders] = useState(initialPoshes);
+  const [nextId, setNextId] = useState(6);
 
 
   const handlerBtnAddFolder = () => {
@@ -50,10 +51,16 @@ function Poshe() {
 
 
     const handlchangOK = () => {
-      setFolders([{name: NewFolderValue}, ...Folders]);
+      setFolders([{name: NewFolderValue,id: nextId}, ...Folders]);
       setisShowFolder(false);
+      setNewFolderValue('');
 
+      setNextId(nextId + 1);
     }
+
+console.log();
+
+
 
 
     return (
@@ -68,11 +75,11 @@ function Poshe() {
             {isShowFolder &&(
               <div >
               <div className='folder'>
-                <img src={folderIcon}/>
-                <input type="text" className='input-new-folder' onChange={handlchang}/>
-                <button className='btn-ok-new-folder' onClick={handlchangOK}>OK</button>
-                <button onClick={cancelHandlerBtnAddFolder
-                }>Cancel</button>
+                <img src={NewFolderIcon}/>
+                <input type="text" className='input-new-folder' onChange={handlchang} placeholder='نام فولدر...'/>
+                <button className='btn-ok-new-folder' onClick={handlchangOK}>ثبت</button>
+                <button className='btn-cancel-new-folder' onClick={cancelHandlerBtnAddFolder
+                }>برگشت</button>
               </div>
             </div>
             )}

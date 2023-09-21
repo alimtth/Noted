@@ -1,48 +1,3 @@
-/* .title2 {
-    font-family: esteadad-NA;
-    font-size: 12px;
-    color: #00000099;
-    
-}
-
-.title-poshe{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    margin-bottom: -20px;
-}
-
-.folder-plus{
-    margin-left: 40px;
-    color: #939393;
-
-}
-
-.title-noted-all {
-    display: flex;
-    align-items: center;
-}
-
-.title-noted-folder{
-    display: flex;
-    align-items: center;
-    font-family: esteadad-NA;
-    color: #00000099;
-    font-size: 14px;
-}
-
-.title-noted-folder-all{
-    display: flex;
-    align-items: center;
-    font-family: esteadad-NA;
-    color: #000000;
-    font-size: 14px;
-    background-color: #fff;
-    width: 100%;
-    height: 40px;
-    padding: 10px, 20px, 10px;
-    z-index: 2;
-} */
 
 .title-poshe header {
     display: flex;
@@ -83,9 +38,50 @@
 .NewFolderIcon{
     color: aqua;
 }
+.folder {
+    margin-right: 20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    
+ }
 
-    .folder {
-        margin-right: 20px;
-        display: flex;
-        gap: 10px;
-    }
+.input-new-folder{
+  width: 135px;
+  height: 24px;
+  opacity: 70%;
+  border: none;
+  background:#fff;
+  border-radius: 3px;
+  font-family: esteadad-NA;
+}    
+
+.input-new-folder::placeholder {
+    color: black;
+    padding: 20px;
+}
+
+.input-new-folder:focus {
+  outline-width: 1px;
+  outline-color: #D9614C;
+}
+
+.btn-ok-new-folder{
+    background: #ce6856;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-family: esteadad-NA;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.btn-cancel-new-folder{
+    background: #da8a7c;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-family: esteadad-NA;
+    padding-right: 10px;
+    padding-left: 10px;
+}
