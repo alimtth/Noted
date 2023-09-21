@@ -23,7 +23,6 @@
     align-items: center;
     gap: 15px;
     align-self: stretch;
-  
     color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
     font-style: normal;
@@ -36,7 +35,12 @@
   }
 
 .NewFolderIcon{
-    color: aqua;
+    margin-left: 20px;
+    background: #ececec;
+    opacity: 0.9;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: progress;
 }
 .folder {
     margin-right: 20px;
