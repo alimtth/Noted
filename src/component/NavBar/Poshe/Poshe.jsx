@@ -36,12 +36,7 @@ function Poshe() {
   const [nextId, setNextId] = useState(6);
 
 
-  useEffect(() => {
-    const storedFolders = localStorage.getItem("folders");
-    if (storedFolders) {
-      setFolders(JSON.parse(storedFolders));
-    }
-  }, []);
+ 
   
 
 
@@ -58,6 +53,13 @@ function Poshe() {
       setNewFolderValue(event.target.value)
     }
 
+     useEffect(() => {
+    const storedFolders = localStorage.getItem("folders");
+    if (storedFolders) {
+      setFolders(JSON.parse(storedFolders));
+    }
+  }, []);
+
 
     const handlchangOK = () => {
       const newFolder = { name: NewFolderValue, id: nextId };
@@ -68,7 +70,7 @@ function Poshe() {
       setNextId(nextId + 1);
     
       // ذخیره پوشه‌ها در لوکال استوریج
-      localStorage.setItem("folders", JSON.stringify(updatedFolders));
+      // localStorage.setItem("folders", JSON.stringify(updatedFolders));
     };
     
 
@@ -87,8 +89,7 @@ function Poshe() {
                 <img src={NewFolderIcon}/>
                 <input type="text" className='input-new-folder' onChange={handlchang} placeholder='نام فولدر...'/>
                 <button className='btn-ok-new-folder' onClick={handlchangOK}>ثبت</button>
-                <button className='btn-cancel-new-folder' onClick={cancelHandlerBtnAddFolder
-                }>برگشت</button>
+                <button className='btn-cancel-new-folder' onClick={cancelHandlerBtnAddFolder}>برگشت</button>
               </div>
             </div>
             )}
