@@ -1,7 +1,6 @@
 import './Card.css'
 import CardsItem from '../CardsItem';
 import { Plus } from 'react-bootstrap-icons';
-
 import { useState } from 'react';
 
 const cards = [
@@ -13,13 +12,13 @@ const cards = [
         color: "#4C86A8"
 
     },
-    // {
-    //     id: 2,
-    //     title:"کتاب هایی که میخواهم بخونم",
-    //     description:"کتابخونه نمیشه شب...",
-    //     date:"۱ شهریور ۱۴۰۲",
-    //     color: "#38A3A5"
-    // },
+    {
+        id: 2,
+        title:"کتاب هایی که میخواهم بخونم",
+        description:"کتابخونه نمیشه شب...",
+        date:"۱ شهریور ۱۴۰۲",
+        color: "#38A3A5"
+    },
     // {
     //     id: 3,
     //     title:"هدف من برای سال حدید",
@@ -92,6 +91,8 @@ function Card() {
                     <input type="text" className='add_note' placeholder='موضوع خود را وارد کنید' onChange={handlchangBtnAddNoteTitle}/>
                     <input type="text" className='add_note' placeholder='متن خود را وارد کنین' onChange={handlchangBtnAddNoteDes}/>
                     <input type="date" className='add_note' placeholder='تاریخ را وارد کنین'  onChange={handlchangBtnAddNoteDate}/>
+                    
+                    
                     </section>
     
                     <div className="add_note_ok_cancel">
