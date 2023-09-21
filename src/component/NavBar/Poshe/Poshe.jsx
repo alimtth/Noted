@@ -36,10 +36,6 @@ function Poshe() {
   const [nextId, setNextId] = useState(6);
 
 
- 
-  
-
-
   const handlerBtnAddFolder = () => {
     setisShowFolder(true)
   }
@@ -70,7 +66,7 @@ function Poshe() {
       setNextId(nextId + 1);
     
       // ذخیره پوشه‌ها در لوکال استوریج
-      // localStorage.setItem("folders", JSON.stringify(updatedFolders));
+      localStorage.setItem("folders", JSON.stringify(updatedFolders));
     };
     
 

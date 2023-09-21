@@ -1,4 +1,3 @@
- import { useState } from "react";
 
 function NavBarItem({ text, icon, event, selectPoshe}) {
   const styl = {
