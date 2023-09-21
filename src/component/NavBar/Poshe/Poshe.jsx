@@ -2,6 +2,9 @@ import './Poshe.css'
 import folderIcon from "@/assets/images/icons/folder.svg";
 import NewFolderIcon from "@/assets/images/icons/new-folder.svg";
 import OpenFolderIcon from "@/assets/images/icons/open-folder.svg";
+import { Plus } from 'react-bootstrap-icons';
+import { XLg } from 'react-bootstrap-icons';
+
 import NavBarItem from "../NavBarItem/NavBarItem";
 import { useEffect, useState } from 'react';
 
@@ -84,8 +87,8 @@ function Poshe() {
               <div className='folder'>
                 <img src={NewFolderIcon}/>
                 <input type="text" className='input-new-folder' onChange={handlchang} placeholder='نام فولدر...'/>
-                <button className='btn-ok-new-folder' onClick={handlchangOK}>ثبت</button>
-                <button className='btn-cancel-new-folder' onClick={cancelHandlerBtnAddFolder}>برگشت</button>
+                <button className='btn-ok-new-folder' onClick={handlchangOK}><Plus /></button>
+                <button className='btn-cancel-new-folder' onClick={cancelHandlerBtnAddFolder}><XLg /></button>
               </div>
             </div>
             )}
