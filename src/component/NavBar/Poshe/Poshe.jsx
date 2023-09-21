@@ -3,7 +3,7 @@ import folderIcon from "@/assets/images/icons/folder.svg";
 import NewFolderIcon from "@/assets/images/icons/new-folder.svg";
 import OpenFolderIcon from "@/assets/images/icons/open-folder.svg";
 import NavBarItem from "../NavBarItem/NavBarItem";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const initialPoshes = [
     {
@@ -36,6 +36,15 @@ function Poshe() {
   const [nextId, setNextId] = useState(6);
 
 
+  useEffect(() => {
+    const storedFolders = localStorage.getItem("folders");
+    if (storedFolders) {
+      setFolders(JSON.parse(storedFolders));
+    }
+  }, []);
+  
+
+
   const handlerBtnAddFolder = () => {
     setisShowFolder(true)
   }
@@ -51,17 +60,17 @@ function Poshe() {
 
 
     const handlchangOK = () => {
-      setFolders([{name: NewFolderValue,id: nextId}, ...Folders]);
+      const newFolder = { name: NewFolderValue, id: nextId };
+      const updatedFolders = [...Folders, newFolder];
+      setFolders(updatedFolders);
       setisShowFolder(false);
       setNewFolderValue('');
-
       setNextId(nextId + 1);
-    }
-
-console.log();
-
-
-
+    
+      // ذخیره پوشه‌ها در لوکال استوریج
+      localStorage.setItem("folders", JSON.stringify(updatedFolders));
+    };
+    
 
     return (
         <section className='title-poshe'>
