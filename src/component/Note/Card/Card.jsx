@@ -1,7 +1,7 @@
 import "./Card.css";
 import CardsItem from "../CardsItem";
 import { Plus } from "react-bootstrap-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const cards = [
   {
@@ -27,7 +27,7 @@ function Card() {
   const [newNoteValueDate, setNewNoteValueDate] = useState();
   const [Notes, setNotes] = useState(cards);
   const [selectedColor, setSelectedColor] = useState();
-  const [nextId, setNextId] = useState(6);
+  const [nextId2, setNextId2] = useState(3);
 
 
   const handlClickAddNote = () => {
@@ -52,19 +52,26 @@ function Card() {
     setSelectedColor(color);
   };
 
+  useEffect(() => {
+    const storegCard = localStorage.getItem("notes");
+    if (storegCard) {
+      setNotes(JSON.parse(storegCard))
+    }
+  })
+
   const handlChangOKnewNote = () => {
     const newNote = {
       title: newNoteValueTitle,
       description: newNoteValueDes,
       date: newNoteValueDate,
       color: selectedColor,
-      id: nextId,
+      id: nextId2,
     };
     const upNoteNew = [...Notes, newNote];
     setNotes(upNoteNew);
     setisShowAddNote(false);
-    setNextId(nextId + 1)
-    // setNewNoteValue('');
+    setNextId2(nextId2 + 1)
+    localStorage.setItem("notes", JSON.stringify(upNoteNew));
   };
   return (
     <>
