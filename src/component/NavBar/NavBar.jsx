@@ -15,6 +15,10 @@ function NavBar() {
         setisShowAddNote(true)
     }
 
+    const cancelHandlerBtnAddNote = () => {
+        setisShowAddNote(false)
+    }
+
 
     return (
         <div className='nav'>
@@ -38,7 +42,7 @@ function NavBar() {
     
                     <div className="add_note_ok_cancel">
                     <button className='btn-ok-new-folder'>ثبت</button>
-                    <button className='btn-cancel-new-folder'>برگشت</button>
+                    <button className='btn-cancel-new-folder' onClick={cancelHandlerBtnAddNote}>برگشت</button>
                     </div>
                     </div>
                 )}
