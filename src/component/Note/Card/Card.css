@@ -59,3 +59,81 @@
     color: #A9957B;
     margin-left: 10px;
 }
+
+.selectColor {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.color1 {
+    background: #38A3A5;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.color2 {
+    background: #8377D1;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+.color3 {
+    background: #4C86A8;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+.color4 {
+    background: #ac2121;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+.color5 {
+    background: #bdbf43;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+.color1:hover {
+    background: #52ccce;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: #4C86A8;
+}
+.color2:hover {
+    background: #9389d7;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+.color3:hover {
+    background: #6199ba;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+.color4:hover {
+    background: #c75656;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
+.color5:hover {
+    background: #cccd85;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+}
