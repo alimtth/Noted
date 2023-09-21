@@ -86,7 +86,7 @@ function Poshe() {
               <div >
               <div className='folder'>
                 <img src={NewFolderIcon}/>
-                <input type="text" className='input-new-folder' onChange={handlchang} placeholder='نام فولدر...'/>
+                <input type="text" className='input-new-folder' onChange={handlchang} placeholder='نام پوشه ...'/>
                 <button className='btn-ok-new-folder' onClick={handlchangOK}><Plus /></button>
                 <button className='btn-cancel-new-folder' onClick={cancelHandlerBtnAddFolder}><XLg /></button>
               </div>

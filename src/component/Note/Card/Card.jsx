@@ -27,6 +27,8 @@ function Card() {
   const [newNoteValueDate, setNewNoteValueDate] = useState();
   const [Notes, setNotes] = useState(cards);
   const [selectedColor, setSelectedColor] = useState();
+  const [nextId, setNextId] = useState(6);
+
 
   const handlClickAddNote = () => {
     setisShowAddNote(true);
@@ -56,10 +58,12 @@ function Card() {
       description: newNoteValueDes,
       date: newNoteValueDate,
       color: selectedColor,
+      id: nextId,
     };
     const upNoteNew = [...Notes, newNote];
     setNotes(upNoteNew);
     setisShowAddNote(false);
+    setNextId(nextId + 1)
     // setNewNoteValue('');
   };
   return (
