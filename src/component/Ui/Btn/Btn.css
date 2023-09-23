@@ -1,0 +1,17 @@
+.btn-folder{
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-family: esteadad-NA;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+.btn-folder--ok{
+    background: hsl(9, 100%, 70%);
+}
+.btn-folder--cancel{
+    background: #da8a7c;
+}
+

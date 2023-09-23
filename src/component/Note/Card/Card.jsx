@@ -48,16 +48,16 @@ function Card() {
     setNewNoteValueDate(event.target.value);
   };
 
-  const handleColorSelect = (color) => {
-    setSelectedColor(color);
+  const handleColorSelect = (coloor) => {
+    setSelectedColor(coloor);
   };
 
-  useEffect(() => {
-    const storegCard = localStorage.getItem("notes");
-    if (storegCard) {
-      setNotes(JSON.parse(storegCard))
-    }
-  })
+  // useEffect(() => {
+  //   const storegCard = localStorage.getItem("notes");
+  //   if (storegCard) {
+  //     setNotes(JSON.parse(storegCard));
+  //   }
+  // })
 
   const handlChangOKnewNote = () => {
     const newNote = {
@@ -71,7 +71,7 @@ function Card() {
     setNotes(upNoteNew);
     setisShowAddNote(false);
     setNextId2(nextId2 + 1)
-    localStorage.setItem("notes", JSON.stringify(upNoteNew));
+    // localStorage.setItem("notes", JSON.stringify(upNoteNew));
   };
   return (
     <>
@@ -84,8 +84,8 @@ function Card() {
       </div>
 
       {isShowAddNote && (
-        <div>
-          <section className="add-note-paren">
+        <form>
+          <div className="add-note-paren">
             <input
               type="text"
               className="add_note"
@@ -104,7 +104,7 @@ function Card() {
               placeholder="تارییخ را وارد کنین"
               onChange={handlchangBtnAddNoteDate}
             />
-          </section>
+          </div>
           <div className="selectColor">
             <div
               className="color1"
@@ -139,7 +139,7 @@ function Card() {
               برگشت
             </button>
           </div>
-        </div>
+        </form>
       )}
 
       <div className="card-notess">
