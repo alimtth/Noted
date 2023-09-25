@@ -9,24 +9,21 @@ import NavBarItem from "../NavBarItem/NavBarItem";
 import { useEffect, useState } from "react";
 
 const initialPoshes = [
+  
   {
     id: 1,
-    name: "همه یاد‌داشت‌‌ها",
-  },
-  {
-    id: 2,
     name: "کاری",
   },
   {
-    id: 3,
+    id: 2,
     name: "مسافرت",
   },
   {
-    id: 4,
+    id: 3,
     name: "رویدادها",
   },
   {
-    id: 5,
+    id: 4,
     name: "باشگاه",
   },
 ];
@@ -36,7 +33,6 @@ function Poshe() {
   const [isShowFolder, setisShowFolder] = useState(false);
   const [NewFolderValue, setNewFolderValue] = useState();
   const [Folders, setFolders] = useState(initialPoshes);
-  const [nextId, setNextId] = useState(6);
 
   const handlerBtnAddFolder = () => {
     setisShowFolder(true);
@@ -51,14 +47,11 @@ function Poshe() {
   };
 
   const handlchangOK = () => {
-    const newFolder = { name: NewFolderValue, id: nextId };
+    const newFolder = { name: NewFolderValue, id: Folders.length + 1 };
     const updatedFolders = [...Folders, newFolder];
     setFolders(updatedFolders);
     setisShowFolder(false);
     setNewFolderValue("");
-    setNextId(nextId + 1);
-    console.log("salam");
-
     localStorage.setItem("folders", JSON.stringify(updatedFolders));
   };
   useEffect(() => {
@@ -103,7 +96,6 @@ function Poshe() {
             <img src={NewFolderIcon} />
             <input
               type="text"
-              className="input-new-folder"
               onChange={handlchang}
               placeholder="نام پوشه ..."
             />
@@ -112,7 +104,7 @@ function Poshe() {
               <Plus />
             </Btn>
             <Btn onClick={cancelHandlerBtnAddFolder} variant="cancel">
-              cancel
+              برگشت
             </Btn>
           </form>
         </div>

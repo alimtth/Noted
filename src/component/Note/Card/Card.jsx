@@ -1,8 +1,7 @@
 import "./Card.css";
 import CardsItem from "../CardsItem";
-import {  useState } from "react";
+import { useState } from "react";
 import { Plus } from "react-bootstrap-icons";
-
 
 const cards = [
   {
@@ -23,7 +22,7 @@ const cards = [
 
 function Card() {
   const [cardSelected, setselected] = useState(null);
-  
+
   const [isShowAddNote, setisShowAddNote] = useState(false);
   const [newNoteValueTitle, setNewNoteValueTitle] = useState();
   const [newNoteValueDes, setNewNoteValueDes] = useState();
@@ -31,7 +30,6 @@ function Card() {
   const [selectedColor, setSelectedColor] = useState();
   const [nextId2, setNextId2] = useState(3);
   const [Notes, setNotes] = useState(cards);
-
 
   const cancelHandlerBtnAddNote = () => {
     setisShowAddNote(false);
@@ -55,7 +53,6 @@ function Card() {
     setisShowAddNote(true);
   };
 
-
   const handlChangOKnewNote = () => {
     const newNote = {
       title: newNoteValueTitle,
@@ -67,26 +64,26 @@ function Card() {
     const upNoteNew = [...Notes, newNote];
     setNotes(upNoteNew);
     setisShowAddNote(false);
-    setNextId2(nextId2 + 1)
-  
-  // useEffect(() => {
-  //   const storegCard = localStorage.getItem("notes");
-  //   if (storegCard) {
-  //     setNotes(JSON.parse(storegCard));
-  //   }
-  // })
-  }
-  
+    setNextId2(nextId2 + 1);
+
+    // useEffect(() => {
+    //   const storegCard = localStorage.getItem("notes");
+    //   if (storegCard) {
+    //     setNotes(JSON.parse(storegCard));
+    //   }
+    // })
+  };
+
   return (
     <>
-    <div className="card-notess">
-    <div className="button">
+      <div className="card-notess">
+        <div className="button">
           <button className="button1" onClick={handlClickAddNote}>
             <Plus className="plus" />
             یادداشت جدید
           </button>
         </div>
-    {isShowAddNote && (
+        {isShowAddNote && (
           <form>
             <div className="add-note-paren">
               <input

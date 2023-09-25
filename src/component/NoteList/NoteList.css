@@ -1,32 +1,13 @@
-.notelist {
-    flex-basis: 71%;
-    background-color: #F8EEE2;
-    height: 100vh;
+#Note {
+    flex-basis: 60%;
+    background-color: #f8eee2;
     display: flex;
+    padding: 50px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-}
-
-.file-text {
-    width: 90px;
-    height: 90px;
-}
-
-.paren {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.title-list {
-    font-size: 28px;
-}
-.desc-list {
-    font-size: 16px;
-    color: #595550;
-    font-weight: 100;
-    
-}
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+    overflow: hidden;
+  }

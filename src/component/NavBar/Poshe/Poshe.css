@@ -1,97 +1,103 @@
-
 .title-poshe header {
-    display: flex;
-    padding: 0px 20px;
-    justify-content: space-between;
-    align-items: center;
-
+  display: flex;
+  padding: 0px 20px;
+  justify-content: space-between;
+  align-items: center;
 }
 .title-poshe header h2 {
-    font-size: 12px;
-    font-family: esteadad-NA;
-    font-weight: 400;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
 }
 .new-folder-button {
-    border: none;
-    background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 5px;
+  border-radius: 4px;
+}
+.new-folder-button:hover {
+  background-color: #fbe3c6;
 }
 
 .nav-bar-item {
-    display: flex;
-    padding: 10px 20px;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
-    align-self: stretch;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 21px;
-  }
-
-  .nav-bar-item--selected {
-    background: #FFFBFA;
-  }
-
-.NewFolderIcon{
-    margin-left: 20px;
-    background: #ececec;
-    opacity: 0.9;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: progress;
+  display: flex;
+  padding: 10px 20px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  align-self: stretch;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
 }
+
+.nav-bar-item--selected {
+  background: #fffbfa;
+}
+
 .folder {
-    margin-right: 20px;
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    
- }
-
-.input-new-folder{
-  width: 135px;
-  height: 24px;
-  opacity: 70%;
+  display: flex;
+  align-items: center;
+  width: 100%;
   border: none;
-  background:#fff;
-  border-radius: 3px;
+  gap: 15px;
+  padding: 10px 20px;
+}
+
+.folder img {
+  width: 20px;
+  height: 20px;
+}
+
+.folder input {
+  width: 40%;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  margin: 0;
+  border-radius: 5px;
+  transition: all 300ms ease;
+}
+
+
+
+.folder input::placeholder {
+  color: black;
   font-family: esteadad-NA;
-}    
-
-.input-new-folder::placeholder {
-    color: black;
-    padding: 20px;
 }
 
-.input-new-folder:focus {
-  outline-width: 1px;
-  outline-color: #D9614C;
+.folder input:focus {
+  outline-width: 1px ;
+  outline-color: #d9614c;
 }
 
-.btn-ok-new-folder{
-    background: #ce6856;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-family: esteadad-NA;
-    padding-right: 10px;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
+.btn-ok-new-folder {
+  background: #ce6856;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-family: esteadad-NA;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
-
-.btn-cancel-new-folder{
-    background: #da8a7c;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-family: esteadad-NA;
-    padding-right: 10px;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
+.btn-cancel-new-folder {
+  background: #da8a7c;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-family: esteadad-NA;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
 }

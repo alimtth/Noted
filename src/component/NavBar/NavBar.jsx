@@ -2,30 +2,21 @@ import "./Navbar.css";
 import LastNote from "./lastNote/LastNote";
 import Poshe from "./Poshe/Poshe";
 import More from "./More/More";
-import { Search } from "react-bootstrap-icons";
-import { useState } from "react";
+import Logo from "@/assets/images/logo.svg";
+import SearchIcon from "@/assets/images/icons/search.svg";
 
 function NavBar() {
- 
-
- 
   return (
-    <div className="nav">
-      <div className="parent">
-        <div className="search">
-          <h3 className="icon-text-navbar">Noted</h3>
-          <h4>
-            <Search className="serc" />
-          </h4>
-        </div>
-        
-       
-        <LastNote />
-
-        <Poshe />
-
-        <More />
-      </div>
+    <div id="nav-bar">
+      <header>
+        <img src={Logo} />
+        <button className="search-btn">
+          <img src={SearchIcon} />
+        </button>
+      </header>
+      <LastNote />
+      <Poshe />
+      <More />
     </div>
   );
 }

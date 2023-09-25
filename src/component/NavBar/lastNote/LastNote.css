@@ -1,11 +1,16 @@
-
-.last-note-container h5{
-    font-family: esteadad-NA;
-    color: #00000099;
-    font-size: 12px;
-    padding: 0px 20px;
+.last-notes-container h5 {
+  text-align: right;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 0 20px;
 }
 
-
-
-
+.last-notes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  align-self: stretch;
+}
