@@ -4,7 +4,7 @@ import FormNotes from "./FormNote/FormNotes";
 import { useState } from "react";
 
 function NoteList() {
-    const [showFolderNote] = useState(true);
+    const [showFolderNote] = useState(false); //true
   return (
     <div id="Note">
     {showFolderNote ? <EmptyNote /> : <FormNotes />}

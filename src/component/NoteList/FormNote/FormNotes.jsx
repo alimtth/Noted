@@ -1,8 +1,8 @@
-
+import NavFormNote from './NavFomrNote/NavFormNote'
 function FormNotes() {
     return (
         <div>
-            sasadddddddddddddddddddddddd
+            <NavFormNote />
         </div>
     );
 }
