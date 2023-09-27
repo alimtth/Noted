@@ -1,7 +1,6 @@
 import "./Card.css";
 import CardsItem from "../CardsItem";
 import { useState } from "react";
-import { Plus } from "react-bootstrap-icons";
 
 const cards = [
   {
@@ -23,67 +22,62 @@ const cards = [
 function Card() {
   const [cardSelected, setselected] = useState(null);
 
-  const [isShowAddNote, setisShowAddNote] = useState(false);
-  const [newNoteValueTitle, setNewNoteValueTitle] = useState();
-  const [newNoteValueDes, setNewNoteValueDes] = useState();
-  const [newNoteValueDate, setNewNoteValueDate] = useState();
-  const [selectedColor, setSelectedColor] = useState();
-  const [nextId2, setNextId2] = useState(3);
-  const [Notes, setNotes] = useState(cards);
+  // const [isShowAddNote, setisShowAddNote] = useState(false);
+  // const [newNoteValueTitle, setNewNoteValueTitle] = useState();
+  // const [newNoteValueDes, setNewNoteValueDes] = useState();
+  // const [newNoteValueDate, setNewNoteValueDate] = useState();
+  // const [selectedColor, setSelectedColor] = useState();
+  // const [nextId2, setNextId2] = useState(3);
+  // const [Notes, setNotes] = useState(cards);
 
-  const cancelHandlerBtnAddNote = () => {
-    setisShowAddNote(false);
-  };
+  // const cancelHandlerBtnAddNote = () => {
+  //   setisShowAddNote(false);
+  // };
 
-  const handlchangBtnAddNoteTitle = (event) => {
-    setNewNoteValueTitle(event.target.value);
-  };
-  const handlchangBtnAddNoteDes = (event) => {
-    setNewNoteValueDes(event.target.value);
-  };
-  const handlchangBtnAddNoteDate = (event) => {
-    setNewNoteValueDate(event.target.value);
-  };
+  // const handlchangBtnAddNoteTitle = (event) => {
+  //   setNewNoteValueTitle(event.target.value);
+  // };
+  // const handlchangBtnAddNoteDes = (event) => {
+  //   setNewNoteValueDes(event.target.value);
+  // };
+  // const handlchangBtnAddNoteDate = (event) => {
+  //   setNewNoteValueDate(event.target.value);
+  // };
 
-  const handleColorSelect = (coloor) => {
-    setSelectedColor(coloor);
-  };
+  // const handleColorSelect = (coloor) => {
+  //   setSelectedColor(coloor);
+  // };
 
-  const handlClickAddNote = () => {
-    setisShowAddNote(true);
-  };
+  // const handlClickAddNote = () => {
+  //   setisShowAddNote(true);
+  // };
 
-  const handlChangOKnewNote = () => {
-    const newNote = {
-      title: newNoteValueTitle,
-      description: newNoteValueDes,
-      date: newNoteValueDate,
-      color: selectedColor,
-      id: nextId2,
-    };
-    const upNoteNew = [...Notes, newNote];
-    setNotes(upNoteNew);
-    setisShowAddNote(false);
-    setNextId2(nextId2 + 1);
+  // const handlChangOKnewNote = () => {
+  //   const newNote = {
+  //     title: newNoteValueTitle,
+  //     description: newNoteValueDes,
+  //     date: newNoteValueDate,
+  //     color: selectedColor,
+  //     id: nextId2,
+  //   };
+  //   const upNoteNew = [...Notes, newNote];
+  //   setNotes(upNoteNew);
+  //   setisShowAddNote(false);
+  //   setNextId2(nextId2 + 1);
 
-    // useEffect(() => {
-    //   const storegCard = localStorage.getItem("notes");
-    //   if (storegCard) {
-    //     setNotes(JSON.parse(storegCard));
-    //   }
-    // })
-  };
+  //   // useEffect(() => {
+  //   //   const storegCard = localStorage.getItem("notes");
+  //   //   if (storegCard) {
+  //   //     setNotes(JSON.parse(storegCard));
+  //   //   }
+  //   // })
+  // };
 
   return (
     <>
       <div className="card-notess">
-        <div className="button">
-          <button className="button1" onClick={handlClickAddNote}>
-            <Plus className="plus" />
-            یادداشت جدید
-          </button>
-        </div>
-        {isShowAddNote && (
+        
+        {/* {isShowAddNote && (
           <form>
             <div className="add-note-paren">
               <input
@@ -141,10 +135,10 @@ function Card() {
               >
                 برگشت
               </button>
-            </div>
-          </form>
-        )}
-        {Notes.map((item) => {
+            </div> */}
+          {/* </form> */}
+        {/* )} */}
+        {cards.map((item) => {
           return (
             <CardsItem
               key={item.id}
