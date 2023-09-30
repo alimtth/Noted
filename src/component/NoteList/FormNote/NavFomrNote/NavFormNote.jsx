@@ -1,56 +1,97 @@
 import { Calendar, Folder } from "react-bootstrap-icons";
 import TextEdit from "../textEdit/TextEdit";
+import iconSeNoghte from "../../../../assets/images/icons/Frame 1.png";
+import { useState } from "react";
+import { useCardContext } from "@/component/Context/CardContext";
 
 function NavFormNote() {
+  const [isShowAddNote, setisShowAddNote] = useState(false);
+  const [selectedColor, setSelectedColor] = useState();
+  const [newNoteValueTitle, setNewNoteValueTitle] = useState();
+  const cards = useCardContext();
+  const [Notes, setNotes] = useState(cards);
+
+  const handleColorSelect = (color) => {
+    setSelectedColor(color);
+  };
+
+  const handlClickAddNote = () => {
+    setisShowAddNote(true);
+  };
+
+  const handlchangBtnAddNoteTitle = (event) => {
+    setNewNoteValueTitle(event.target.value);
+    // console.log(event.target.value);
+  };
+
+  const handlChangOKnewNote = () => {
+    const newNote = {
+      title: newNoteValueTitle,
+      //     description: newNoteValueDes,
+      //     date: newNoteValueDate,
+      color: selectedColor,
+      //     id: nextId2,
+    };
+    console.log(Notes);
+    const upNoteNew = [...Notes, newNote];
+      setNotes(upNoteNew);
+      setisShowAddNote(false);
+  };
+  //   setNextId2(nextId2 + 1);
+
   return (
     <div className="NavBar__Note">
       <div className="title_Navbar">
-        <h3>خلاصه جلسه ۱۲ صدکدرز</h3>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-        >
-          <path
-            d="M10 10.8333C10.4603 10.8333 10.8334 10.4602 10.8334 9.99999C10.8334 9.53975 10.4603 9.16666 10 9.16666C9.53978 9.16666 9.16669 9.53975 9.16669 9.99999C9.16669 10.4602 9.53978 10.8333 10 10.8333Z"
-            stroke="black"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M15.8333 10.8333C16.2936 10.8333 16.6667 10.4602 16.6667 9.99999C16.6667 9.53975 16.2936 9.16666 15.8333 9.16666C15.3731 9.16666 15 9.53975 15 9.99999C15 10.4602 15.3731 10.8333 15.8333 10.8333Z"
-            stroke="black"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M4.16665 10.8333C4.62688 10.8333 4.99998 10.4602 4.99998 9.99999C4.99998 9.53975 4.62688 9.16666 4.16665 9.16666C3.70641 9.16666 3.33331 9.53975 3.33331 9.99999C3.33331 10.4602 3.70641 10.8333 4.16665 10.8333Z"
-            stroke="black"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        {/* <h3>خلاصه جلسه ۱۲ صدکدرز</h3> */}
+        <input
+          type="text"
+          className="input__title"
+          onChange={handlchangBtnAddNoteTitle}
+          placeholder="موضوع خود را وارد کنید"
+        />
+        <img src={iconSeNoghte} onClick={handlClickAddNote} />
+
+        {isShowAddNote && (
+          <div className="selectColor">
+            <div
+              className="color1"
+              onClick={() => handleColorSelect("#38A3A5")}
+            ></div>
+            <div
+              className="color2"
+              onClick={() => handleColorSelect("#8377D1")}
+            ></div>
+            <div
+              className="color3"
+              onClick={() => handleColorSelect("#4C86A8")}
+            ></div>
+            <div
+              className="color4"
+              onClick={() => handleColorSelect("#ac2121")}
+            ></div>
+            <div
+              className="color5"
+              onClick={() => handleColorSelect("#bdbf43")}
+            ></div>
+          </div>
+        )}
       </div>
       <div className="title_Navbar_2">
         <div className="folder_NavBarNote">
           <Folder />
           <h3>پوشه</h3>
           <h4>شخصی</h4>
+          <button className="btn-ok-new-folder" onClick={handlChangOKnewNote}>
+            ثبت
+          </button>
         </div>
         <div className="date">
           <Calendar />
           <h5>زمان ایجاد</h5>
           <h6>۱۸ شهریور ۱۴۰۲</h6>
         </div>
-        
       </div>
-      <div className="Rectangle">
-      </div>
+      <div className="Rectangle"></div>
       <TextEdit />
     </div>
   );

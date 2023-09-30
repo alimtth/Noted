@@ -14,12 +14,20 @@
   
 }
 
-.title_Navbar h3 {
-  color: #000;
+
+.input__title {
+  width: 300px;
+  height: 40px;
+  background: none;
+  border: none;
+  outline-color: #c1a990;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  font-family: esteadad-NA;
+  
+
 }
 
 .title_Navbar_2 {
