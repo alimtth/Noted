@@ -5,10 +5,12 @@ import { useState } from "react";
 import { useCardContext } from "@/component/Context/CardContext";
 
 function NavFormNote() {
+  const cards = useCardContext();
   const [isShowAddNote, setisShowAddNote] = useState(false);
   const [selectedColor, setSelectedColor] = useState();
   const [newNoteValueTitle, setNewNoteValueTitle] = useState();
-  const cards = useCardContext();
+  const [newNoteValueDes, setNewNoteValueDes] = useState();
+  const [newNoteValueDate, setNewNoteValueDate] = useState();
   const [Notes, setNotes] = useState(cards);
 
   const handleColorSelect = (color) => {
@@ -23,19 +25,25 @@ function NavFormNote() {
     setNewNoteValueTitle(event.target.value);
     // console.log(event.target.value);
   };
+  const handlchangBtnAddNoteDes = (event) => {
+    setNewNoteValueDes(event.target.value);
+  };
+  const handlchangBtnAddNoteDate = (event) => {
+    setNewNoteValueDate(event.target.value);
+  };
 
   const handlChangOKnewNote = () => {
     const newNote = {
       title: newNoteValueTitle,
-      //     description: newNoteValueDes,
-      //     date: newNoteValueDate,
+      description: newNoteValueDes,
+      date: newNoteValueDate,
       color: selectedColor,
       //     id: nextId2,
     };
     console.log(Notes);
     const upNoteNew = [...Notes, newNote];
-      setNotes(upNoteNew);
-      setisShowAddNote(false);
+    setNotes(upNoteNew);
+    setisShowAddNote(false);
   };
   //   setNextId2(nextId2 + 1);
 

@@ -1,26 +1,13 @@
 import "./Card.css";
 import CardsItem from "../CardsItem";
 import { useState } from "react";
+import { useCardContext } from "@/component/Context/CardContext";
 
-const cards = [
-  {
-    id: 1,
-    title: "خلاصه جلسه ۱۲ صدکدرز ",
-    description: "دیزاین یه ماشین حساب رو...",
-    date: "۱۸ شهریور ۱۴۰۲",
-    color: "#4C86A8",
-  },
-  {
-    id: 2,
-    title: "کتاب هایی که میخواهم بخونم",
-    description: "کتابخونه نمیشه شب...",
-    date: "۱ شهریور ۱۴۰۲",
-    color: "#38A3A5",
-  },
-];
+
 
 function Card() {
   const [cardSelected, setselected] = useState(null);
+  const cards = useCardContext();
 
   // const [isShowAddNote, setisShowAddNote] = useState(false);
   // const [newNoteValueTitle, setNewNoteValueTitle] = useState();
@@ -139,6 +126,7 @@ function Card() {
           {/* </form> */}
         {/* )} */}
         {cards.map((item) => {
+          console.log(cards);
           return (
             <CardsItem
               key={item.id}
