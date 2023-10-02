@@ -3,6 +3,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { StrictMode } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import NotFuond from "./components/404/NotFuond.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "note/:noteId",
     element: <App />
+  },
+  {
+    path: "*",
+    element: <NotFuond />
   },
 ]);
 
