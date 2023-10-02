@@ -1,8 +1,13 @@
-# React => project notefast.com
+# Noted
+A beautiful note taking app  
+Built with react and vite
 
-git clone https://github.com/alimtth/notefast.git
 
-npm install
+Development
+```sh
+# install dependencies
+npm i
 
+# run development server
 npm run dev
-
+```

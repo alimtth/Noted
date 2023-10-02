@@ -1,22 +1,17 @@
-import './App.css'
-import NavBar from './component/NavBar/NavBar'
-import NoteList from './component/NoteList/NoteList'
-import Note from './component/Note/Note'
-import {NoteProvider} from './component/NoteProvider/NoteProvider'
-import { CardProvider } from './component/Context/CardContext'
+import "./App.css";
+import Note from "./components/Note";
+import NavBar from "./components/Navbar";
+import NoteList from "./components/NoteList";
+import { NoteProvider } from "./providers/NoteProvider";
 
 function App() {
-
   return (
-    <CardProvider>
-    <NoteProvider >
-    <NavBar />
-    <Note />
-    <NoteList />
+    <NoteProvider>
+      <NavBar />
+      <NoteList />
+      <Note />
     </NoteProvider>
-    </CardProvider>
-    
-  )
+  );
 }
 
-export default App
+export default App;
