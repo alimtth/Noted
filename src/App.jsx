@@ -1,4 +1,5 @@
 import "./App.css";
+
 import NavBar from "./components/Navbar";
 import NoteList from "./components/NoteList";
 import { NoteProvider } from "./providers/NoteProvider";

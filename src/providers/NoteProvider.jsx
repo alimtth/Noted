@@ -47,6 +47,7 @@ const initialNotes = [
 ];
 
 function NoteProvider({ children }) {
+  const [SearchTerm, setSearchTerm] = useState();
   const { noteId } = useParams();
   const navigate = useNavigate();
   const [notes, setNotes] = useState(() => {
@@ -87,9 +88,15 @@ function NoteProvider({ children }) {
     // console.log(newNotes );
   };
 
+  const filterSearch = SearchTerm
+  ? notes.filter((note)=> note.title?.includes(SearchTerm))
+  : notes;
+
   const value = {
-    notes,
+    notes: filterSearch,
     updateNote,
+    SearchTerm,
+    setSearchTerm,
   };
 
   return <noteContext.Provider value={value}>{children}</noteContext.Provider>;
