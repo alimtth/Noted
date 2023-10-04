@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 
 function NoteList() {
   const { noteId } = useParams();
-  const { notes,  setSelectedNoteId } = useContext(noteContext);
+  const { notes,  } = useContext(noteContext);
 
   return (
     <div id="note-list">

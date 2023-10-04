@@ -5,7 +5,7 @@ const NoteForm = ({ note, onUpdate }) => {
   return (
     <div className="note-form">
       <div className="note-form__header">
-        <input className="note-form__header__title" value={note? note.title : ""} onChange={(e) => onUpdate("title", e.target.value)}></input>
+        <input className="note-form__header__title" placeholder="عنوان یادداشت خوذ رو وارد کنین" value={note? note.title : ""} onChange={(e) => onUpdate("title", e.target.value)}></input>
       </div>
 
       <div className="note-form__details">

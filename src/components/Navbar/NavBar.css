@@ -111,7 +111,6 @@
   align-items: center;
   gap: 15px;
   align-self: stretch;
-
   color: rgba(0, 0, 0, 0.6);
   font-size: 14px;
   font-style: normal;
@@ -121,4 +120,6 @@
 
 .nav-bar-item--selected {
   background: #fffbfa;
+  width: 331px;
+  
 }
