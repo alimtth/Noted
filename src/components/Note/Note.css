@@ -46,6 +46,9 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  background: none;
+  border: none;
+  
 }
 
 .note-form__details {

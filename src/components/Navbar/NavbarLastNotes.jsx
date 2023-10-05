@@ -19,10 +19,10 @@ function LastNotes() {
           return (
             <Link key={item.id} to={`/note/${item.id}`}>
               <NavBarItem
-               text={item.title}
+                text={item.title}
                 icon={DocIcon}
                 isSelected={item.id == noteId}
-                 />;
+              />  
             </Link>
           );
         })}

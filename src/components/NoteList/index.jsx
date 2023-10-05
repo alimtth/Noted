@@ -4,9 +4,11 @@ import { noteContext } from "@/providers/NoteProvider";
 import "./NoteList.css";
 import { Link, useParams } from "react-router-dom";
 
+
 function NoteList() {
   const { noteId } = useParams();
   const { notes,  } = useContext(noteContext);
+  
 
   return (
     <div id="note-list">
