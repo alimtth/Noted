@@ -1,6 +1,11 @@
-import { useState } from "react";
+import { noteContext } from "@/providers/NoteProvider";
+import { useContext, useState } from "react";
 
 function NoteCard({ title, description, date, color, selected }) {
+  const { notes  } = useContext(noteContext);
+
+ 
+
   const style = {
     borderColor: color,
     backgroundColor: selected ? "white" : "#fcf1e3",

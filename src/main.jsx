@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFuond from "./page/404/NotFuond.jsx";
 import Note from "./components/Note/index.jsx";
 import EmptyNote from "./components/Note/EmptyNote.jsx";
+import Register from "./page/Register/Register.jsx";
+import Login from "./page/Login/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,17 @@ const router = createBrowserRouter([
         path: "note/:noteId",
         element: <Note />,
       },
+      
     ]
+    
+  },
+  {
+    path: "login",
+    element: <Login />,
+  },
+  {
+    path: "register",
+    element: <Register />
   },
   
   {

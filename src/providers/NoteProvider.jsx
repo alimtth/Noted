@@ -94,6 +94,7 @@ function NoteProvider({ children }) {
 
   const value = {
     notes: filterSearch,
+    setNotes,
     updateNote,
     SearchTerm,
     setSearchTerm,
