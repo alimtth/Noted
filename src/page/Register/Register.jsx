@@ -2,8 +2,17 @@ import React from "react";
 import "./Register.css";
 import logo from "../../assets/images/icons/logo.svg";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 function Register() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   return (
     <div id="Register">
       <div className="card__form">
@@ -15,25 +24,59 @@ function Register() {
           <p className="lead__title_form">
             قبلا ثبت نام کرده اید؟
             <Link to="/login" className="link__register">
-                وارد شوید{" "}
+              وارد شوید{" "}
             </Link>
           </p>
         </div>
 
         <div className="form">
           <div className="form__body">
-            <form className="form__w">
+            <form className="form__w" onSubmit={handleSubmit(onSubmit)}>
               <div className="input_num">
                 <label className="form_label_num">موبایل</label>
-                <input className="inp_num" />
+                <input
+                  {...register("mobile", {
+                    required: "شماره موبایل الزامی است",
+                    minLength: 11,
+                    maxLength: 11,
+                  })}
+                  className={`inp_num1 ${errors.mobile && "is-invlid"}`}
+                />
+
+                {
+                  errors.mobile && errors.mobile.type === 'required' && (
+                    <h6>{errors.mobile.message}</h6>
+                  )
+                }
               </div>
               <div className="input_pass">
                 <label className="form_label_pass">رمز عبور</label>
-                <input className="inp_pass" type="password" />
+                <input
+                  className={`inp_pass ${errors.pass && "is-invlid"}`}
+                  type="password"
+                  {...register("pass", { required: "رمز عبور اشتباه است" })}
+                />
+                {
+                  errors.pass && errors.pass.type === 'required' && (
+                    <h5>{errors.pass.message}</h5>
+                  )
+                }
               </div>
               <div className="input_pass">
                 <label className="form_label_pass-1">رمز عبور</label>
-                <input className="inp_pass" type="password" />
+                <input
+                  className={`inp_pass ${errors.pass && "is-invlid"}`}
+                  type="password"
+                  {...register("confirmPass", {
+                    required: "تکرار رمز عبور الزامی است",
+                    validate: value => {
+                      if(watch('pass') !== value){
+                        return "عدم تطابق رمز عبور"
+                      }
+                    }
+
+                  })}
+                />
               </div>
               <div className="text-center mt-3">
                 <button type="submit" className="btn_submit_login">
