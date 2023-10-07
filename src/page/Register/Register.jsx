@@ -1,8 +1,9 @@
 import React from "react";
 import "./Register.css";
 import logo from "../../assets/images/icons/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useSubmit } from "react-router-dom";
 import { useForm } from "react-hook-form";
+// import { httpServis } from "@/core/http-servis";
 
 function Register() {
   const {
@@ -11,7 +12,11 @@ function Register() {
     watch,
     formState: { errors },
   } = useForm();
+  // const submitForm = useSubmit();
   const onSubmit = (data) => console.log(data);
+
+
+  
 
   return (
     <div id="Register">
@@ -92,3 +97,10 @@ function Register() {
 }
 
 export default Register;
+
+// export async function registerAction({request}) {
+//   const formData = await request.formData();
+//   const data = Object.fromEntries(formData);
+//   const res = await httpServis.post('/User', data);
+//   return res.status === 200;
+// }
