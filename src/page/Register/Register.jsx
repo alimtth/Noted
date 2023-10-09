@@ -1,4 +1,3 @@
-import React from "react";
 import "./Register.css";
 import logo from "../../assets/images/icons/logo.svg";
 import { Link, useSubmit } from "react-router-dom";
@@ -14,9 +13,7 @@ function Register() {
   } = useForm();
   // const submitForm = useSubmit();
   const onSubmit = (data) => console.log(data);
-
-
-  
+  ``;
 
   return (
     <div id="Register">
@@ -48,11 +45,9 @@ function Register() {
                   className={`inp_num1 ${errors.mobile && "is-invlid"}`}
                 />
 
-                {
-                  errors.mobile && errors.mobile.type === 'required' && (
-                    <h6>{errors.mobile.message}</h6>
-                  )
-                }
+                {errors.mobile && errors.mobile.type === "required" && (
+                  <h6>{errors.mobile.message}</h6>
+                )}
               </div>
               <div className="input_pass">
                 <label className="form_label_pass">رمز عبور</label>
@@ -61,11 +56,9 @@ function Register() {
                   type="password"
                   {...register("pass", { required: "رمز عبور اشتباه است" })}
                 />
-                {
-                  errors.pass && errors.pass.type === 'required' && (
-                    <h5>{errors.pass.message}</h5>
-                  )
-                }
+                {errors.pass && errors.pass.type === "required" && (
+                  <h5>{errors.pass.message}</h5>
+                )}
               </div>
               <div className="input_pass">
                 <label className="form_label_pass-1">رمز عبور</label>
@@ -74,12 +67,11 @@ function Register() {
                   type="password"
                   {...register("confirmPass", {
                     required: "تکرار رمز عبور الزامی است",
-                    validate: value => {
-                      if(watch('pass') !== value){
-                        return "عدم تطابق رمز عبور"
+                    validate: (value) => {
+                      if (watch("pass") !== value) {
+                        return "عدم تطابق رمز عبور";
                       }
-                    }
-
+                    },
                   })}
                 />
               </div>
