@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center;
 }
+//,
 
 .empty-note__title {
   color: var(--gray-700, #363b40);
